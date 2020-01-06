@@ -43,18 +43,18 @@ pip install -r requirements.txt
 cp config.py.sample config.py
 ```
 
-### IMAGE_DIR
+##### IMAGE_DIR
 
 The directory where the images you want to annotate are located. 
 
 * Only .png and .jpg are supported
 * Subfolders are not supported, i.e. all images must lie directly in IMAGE_DIR
 
-### ANNOTATION_DIR
+##### ANNOTATION_DIR
 
 The directory where the annotations will be stored. Will be automatically created if it does not exist.
 
-### LANDMARK
+##### LANDMARK
 
 The name of the landmark you want to annotate. (e.g. in the video above, LANDMARK=mouth_left).
 
@@ -86,7 +86,7 @@ right where you left things off last time.
 * There will be one sub-folder per image
 * There will be one annotation file per landmark
 
-### Example 
+##### Example 
 
 If you have following images:
 
@@ -130,7 +130,7 @@ If you press skip, no .json file will be created for this image.
 
 ## Postprocessing
 
-### Drawing the landmarks onto the images
+#### Drawing the landmarks onto the images
 
 ```
 python postprocessing_draw_landmarks.py
@@ -138,7 +138,7 @@ python postprocessing_draw_landmarks.py
 
 Please see the script for further information.
 
-### Merge the many landmark files into one file per image
+#### Merge the many landmark files into one file per image
 
 ```
 python postprocessing_merge_annotations.py
@@ -148,7 +148,7 @@ Please see the script for further information.
 
 ## F.A.Q.
 
-## I want to change something in the config file
+### I want to change something in the config file
 
 1. `CTRL+C` to stop the annotation server
 2. Change `config.py` 
@@ -157,7 +157,7 @@ Please see the script for further information.
 
 Important: you always need to restart the server, so that it picks up on the changes.
 
-## I changed something on the filesystem (e.g. added images, deleted annotation files)
+### I changed something on the filesystem (e.g. added images, deleted annotation files)
 
 The server will only pick up on these changes after a restart!
 
@@ -165,7 +165,7 @@ The server will only pick up on these changes after a restart!
 2. `python start.py`
 3. Navigate to [http://localhost:5000](http://localhost:5000)
 
-## I am not happy with my annotation
+### I am not happy with my annotation
 
 ##### If the server is still running
 
@@ -175,15 +175,15 @@ Simply press the "back" button until you find the image and try again.
 
 Delete the corresponding annotation `.json` file and restart the server.
 
-## Is it possible to have the same landmark type multiple times in the same image (e.g. two noses)?
+### Is it possible to have the same landmark type multiple times in the same image (e.g. two noses)?
 
 No.
 
-## Does the tool export to PascalVOC or any other standard annotation format?
+### Does the tool export to PascalVOC or any other standard annotation format?
 
 No, but should not be too hard to add this to `postprocessing_merge_annotations.py`.
 
-## Can two people annotate at the same time?
+### Can two people annotate at the same time?
 
 ##### Using the same server instance?
 
@@ -193,10 +193,10 @@ No, they would overwrite each other's landmarks.
 
 Yes.
 
-## Can I get landmark proposals from a computer vision model?
+### Can I get landmark proposals from a computer vision model?
 
 No.
 
-## Can it do other annotations beyond landmarks?
+### Can it do other annotations beyond landmarks?
 
 No. 
