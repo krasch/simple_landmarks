@@ -1,0 +1,29 @@
+body {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  font-family: helvetica, sans-serif;
+}
+
+/* cursor for marking landmarks should be arrow, not hand */
+a {
+  cursor: default;
+  color: black;
+}
+
+.highlight {
+  color: purple;
+}
+
+img {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+button > a {
+  text-decoration: none;
+}
+
+button: disabled, button[disabled=disabled] > a {
+  text-color: grey;
+}

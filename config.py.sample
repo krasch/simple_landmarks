@@ -1,0 +1,14 @@
+# height at which images will be displayed in browser
+IMAGE_HEIGHT = 600
+
+# directory with images to be annotated
+# will look for images only in top-level directory
+IMAGE_DIR = "images"
+
+# directory where annotations will be stored
+# there will be one folder per image im IMAGE_DIR
+ANNOTATION_DIR = "annotations"
+
+# which landmark to tag, avoid spaces in the name, they will be used as file names
+LANDMARK = "nose_tip"
+

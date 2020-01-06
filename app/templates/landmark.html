@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+
+<head>
+   <title>Landmark annotation</title>
+   <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
+</head>
+
+<body>
+   <h3> Annotation task: <span class="highlight">{{ landmark_name }} </span></h3>
+
+   <div> Annotated: {{ done }} / {{ total }} </div>
+
+   <a href="/results/{{ image_name }}/coordinates">
+      <!-- ismap makes image clickable, sends pixel coordinates to server -->
+      <img src="/images/{{ image_name }}" height="{{ image_height }}" ismap/>
+   </a>
+
+   <div>
+      <button><a href="{{ url_back }}"><u>B</u>ack</a></button>
+      <button><a href="/results/{{ image_name }}/occluded"><u>O</u>ccluded / missing</a></button>
+      <button><a href="/results/{{ image_name }}/skipped"><u>S</u>kip</a></button>
+   </div>
+
+   <script>
+      function handleKeyUp(e) {
+          if (event.keyCode === 66)     // 66 = b
+             window.location.href = "{{ url_previous }}";
+          else if (event.keyCode === 83)   // 83 = s
+             window.location.href = "/results/{{ image_name }}/skipped";
+          else if (event.keyCode === 79)   // 79 = o
+             window.location.href = "/results/{{ image_name }}/occluded";
+      }
+
+      document.addEventListener('keyup', handleKeyUp, false);
+
+   </script>
+
+</body>
+</html>
