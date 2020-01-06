@@ -36,7 +36,7 @@ class ImageManager:
         assert image_dir.exists()
         assert image_dir.is_dir()
 
-        images = image_dir.glob("*.png")  # todo other filetypes
+        images = list(image_dir.glob("*.png")) + list(image_dir.glob("*.jpg"))
         images = sorted(list(images))
         assert len(images) > 0
 
