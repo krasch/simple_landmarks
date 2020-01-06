@@ -20,10 +20,7 @@ img {
   margin-bottom: 1rem;
 }
 
-button > a {
+a > button {
   text-decoration: none;
 }
 
-button: disabled, button[disabled=disabled] > a {
-  text-color: grey;
-}
