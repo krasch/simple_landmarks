@@ -1,0 +1,1 @@
+ffmpeg -i Kazam_screencast_00000.mp4 -vf "fps=10,scale=480:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -ss 00:00:01 -to 00:00:06 -loop 0 out.gif
